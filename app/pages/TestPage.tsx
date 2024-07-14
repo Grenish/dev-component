@@ -32,6 +32,18 @@ export default function TestPage() {
         title="Title One"
         content="Content for the first accordion goes here."
       />
+      <Accordion
+        isOpen={openIndex === 1}
+        onToggle={() => handleToggle(1)}
+        title="Title Ona"
+        content="Content for the first accordion goes here."
+      />
+      <Accordion
+        isOpen={openIndex === 2}
+        onToggle={() => handleToggle(2)}
+        title="Title Ons"
+        content="Content for the first accordion goes here."
+      />
       <LinkPreview
         text="snugnest"
         url="https://example.com"
