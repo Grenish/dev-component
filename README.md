@@ -1,5 +1,11 @@
 # Dev Component
 
-Dev component is a component library for developers. It is a collection of components that are commonly used in web development projects. The components made in this projects are made using NextJs, TailwindCSS, Framer Motion and NextUI.
+A component library based on TailwindCSS, Framer Motion, and NextUI. Dev Component gives developers more freedom over the components. Each component is well-crafted, optimized, and responsive, so developers don't have to make them.
 
-The components are crafted carefully to make sure that they are easy to use and responsive as well as optimized for performance.
+
+The README will soon be updated with more information.
+
+
+# License
+
+This project is licensed under the MIT License.
