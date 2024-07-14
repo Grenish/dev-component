@@ -7,12 +7,14 @@ interface LinkPreviewProps {
   text: string;
   url: string;
   previewImage: string;
+  classname?: string;
 }
 
 const LinkPreview: React.FC<LinkPreviewProps> = ({
   text,
   url,
   previewImage,
+  classname,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -37,7 +39,7 @@ const LinkPreview: React.FC<LinkPreviewProps> = ({
         onMouseEnter={handleMouseEnter}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className=""
+        className={classname}
         target="_blank"
       >
         {text}
@@ -57,7 +59,11 @@ const LinkPreview: React.FC<LinkPreviewProps> = ({
           }}
           className="bg-white border rounded-lg shadow-lg p-1"
         >
-          <img src={previewImage} alt="Link preview" className=" w-36 h-auto object-cover rounded-md" />
+          <img
+            src={previewImage}
+            alt="Link preview"
+            className=" w-36 h-auto object-cover rounded-md"
+          />
         </motion.div>
       )}
     </div>
