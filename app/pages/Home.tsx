@@ -1,5 +1,4 @@
-import CodeSmall from "../components/CodeSmall";
-import KbdTag from "../components/Kbd";
+
 import LinkPreview from "../components/LinkPreview";
 
 export default function HomePage() {
@@ -22,7 +21,7 @@ export default function HomePage() {
         </div>
         <div className="mt-5 w-1/2 text-center">
           <p>
-            Dev Component is a library of reusable components designed for
+            Dev Component is an open source library of reusable components designed for
             developers. Streamline your development with speed and ease, giving
             you full control and freedom over every component.
           </p>
