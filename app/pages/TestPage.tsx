@@ -45,10 +45,11 @@ export default function TestPage() {
         content="Content for the first accordion goes here."
       />
       <LinkPreview
-        text="snugnest"
         url="https://example.com"
         previewImage="https://ipfs.filebase.io/ipfs/QmcToifmSHqGBnCKRWKJ72MWNrEaJ2X4d44wZHPss9LNoR"
-      />
+      >
+        SnugNest
+      </LinkPreview>
     </div>
   );
 }
