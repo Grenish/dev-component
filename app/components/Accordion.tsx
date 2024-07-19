@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface AccordionProps {
@@ -16,11 +14,8 @@ const Accordion: React.FC<AccordionProps> = ({
   title,
   content,
 }) => {
-
-//   const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <motion.div className="border-b-2 border-gray-600 w-1/4">
+    <motion.div className="border-b-2 border-gray-600 w-full md:w-1/4">
       <button
         onClick={onToggle}
         className="w-full flex items-center justify-between px-4 py-3 focus:outline-none"
