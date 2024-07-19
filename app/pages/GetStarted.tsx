@@ -12,13 +12,13 @@ export default function GetStarted() {
         </p>
         <p className="text-center">More components are coming soon.</p>
       </div>
-      <ul className="flex w-1/2 m-auto justify-between mt-10">
+      {/* <ul className="flex w-1/2 m-auto justify-between mt-10">
         <li>Accordion</li>
         <li>Code</li>
         <li>Kbd</li>
         <li>Link Preview</li>
         <li>Tooltip</li>
-      </ul>
+      </ul> */}
     </div>
   );
 }
