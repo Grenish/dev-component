@@ -34,7 +34,7 @@ const CodeBig: React.FC<CodeBlockProps> = ({ language, code, description }) => {
   };
 
   return (
-    <div className="w-full lg:w-1/3 p-2">
+    <div className="sm:w-1/2 w-full  p-2">
       <div className="overflow-hidden rounded-lg shadow-lg">
         <div className="bg-gray-800 text-white px-3 py-2 text-sm font-semibold flex justify-between items-center">
           <span className="text-sm">{language.toUpperCase()}</span>
@@ -69,7 +69,7 @@ const CodeBig: React.FC<CodeBlockProps> = ({ language, code, description }) => {
         <SyntaxHighlighter
           language={language}
           style={atomDark}
-          customStyle={{ padding: "10px 20px", margin: "0" }}
+          customStyle={{ padding: "10px 20px", margin: "0", "fontSize": "10px" }}
           wrapLines
           showLineNumbers
         >
