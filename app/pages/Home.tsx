@@ -1,4 +1,3 @@
-
 import LinkPreview from "../components/LinkPreview";
 
 export default function HomePage() {
@@ -21,32 +20,37 @@ export default function HomePage() {
         </div>
         <div className="mt-5 w-1/2 text-center">
           <p>
-            Dev Component is an open source library of reusable components designed for
-            developers. Streamline your development with speed and ease, giving
-            you full control and freedom over every component.
+            Dev Component is an open source library of reusable components
+            designed for developers. Streamline your development with speed and
+            ease, giving you full control and freedom over every component.
           </p>
           <p className="mt-2">
             It is based on{" "}
             <LinkPreview
-              text="TailwindCSS"
               url="https://tailwindcss.com"
               previewImage="https://ipfs.filebase.io/ipfs/QmYy1UURYnX2aW8awUDfzpJVQJDV2PBeA6WKGWrBFHYhf6"
               classname="text-blue-500"
-            />
+            >
+              TailwindCSS
+            </LinkPreview>
             , {""}
             <LinkPreview
-              text="NextUI"
               url="https://nextui.org"
               previewImage="https://ipfs.filebase.io/ipfs/QmYgc63SfgkhCXhsyqLiYdoFyddDd3TZQBRZireqKsBe11"
               classname="text-blue-500"
-            />
+            >
+              {" "}
+              NextUI
+            </LinkPreview>
             , and{" "}
             <LinkPreview
-              text="Framer Motion"
               url="https://www.framer.com/motion/"
               previewImage="https://ipfs.filebase.io/ipfs/QmZ7MbgwsrGa4MPdgCM62pqL2MQ6VPZmLxDYECrRKyYkwg"
               classname="text-blue-500"
-            />
+            >
+              {" "}
+              Framer Motion
+            </LinkPreview>
             .
           </p>
         </div>
