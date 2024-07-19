@@ -1,35 +1,49 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, ReactNode } from "react";
 import { motion } from "framer-motion";
 
 interface LinkPreviewProps {
-  text: string;
   url: string;
   previewImage: string;
   classname?: string;
+  children: ReactNode;
 }
 
 const LinkPreview: React.FC<LinkPreviewProps> = ({
-  text,
   url,
   previewImage,
   classname,
+  children,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [position, setPosition] = useState({ left: true, top: true });
 
   const handleMouseEnter = (event: React.MouseEvent) => {
     setIsHovered(true);
-    setMousePosition({ x: event.clientX, y: event.clientY });
+    updateMousePosition(event);
   };
 
   const handleMouseMove = (event: React.MouseEvent) => {
-    setMousePosition({ x: event.clientX, y: event.clientY });
+    updateMousePosition(event);
   };
 
   const handleMouseLeave = () => {
     setIsHovered(false);
+  };
+
+  const updateMousePosition = (event: React.MouseEvent) => {
+    const x = event.clientX;
+    const y = event.clientY;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    const left = x + 150 <= windowWidth; // assuming preview width of 150px
+    const top = y + 100 <= windowHeight; // assuming preview height of 100px
+
+    setMousePosition({ x, y });
+    setPosition({ left, top });
   };
 
   return (
@@ -41,8 +55,9 @@ const LinkPreview: React.FC<LinkPreviewProps> = ({
         onMouseLeave={handleMouseLeave}
         className={classname}
         target="_blank"
+        rel="noopener noreferrer"
       >
-        {text}
+        {children}
       </a>
       {isHovered && (
         <motion.div
@@ -52,8 +67,8 @@ const LinkPreview: React.FC<LinkPreviewProps> = ({
           transition={{ duration: 0.2 }}
           style={{
             position: "fixed",
-            top: mousePosition.y + 10,
-            left: mousePosition.x + 10,
+            top: position.top ? mousePosition.y + 10 : mousePosition.y - 110, // Adjust based on preview height
+            left: position.left ? mousePosition.x + 10 : mousePosition.x - 160, // Adjust based on preview width
             pointerEvents: "none",
             zIndex: 99999,
           }}
@@ -62,7 +77,7 @@ const LinkPreview: React.FC<LinkPreviewProps> = ({
           <img
             src={previewImage}
             alt="Link preview"
-            className=" w-36 h-auto object-cover rounded-md"
+            className="w-36 h-auto object-cover rounded-md"
           />
         </motion.div>
       )}
